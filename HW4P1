@@ -1,0 +1,31 @@
+predicates
+	write_base
+	write_tabel
+	person(symbol,symbol)
+      preferinte(symbol,symbol,symbol,symbol,symbol)
+clauses
+	person(pop,ionel).
+	person(ilie,nae).
+      person(lupsa,mihai).
+      person(fage,ana).
+      person(radu,andreea).
+      person(oltean,alina).
+      person(ardelean,cosmin).
+      preferinte(contabilitate,"2",cig,pasca,”9”).
+      preferinte(retele,"3",ie,tomai,"10").
+      preferinte(economie,"1",egpa,negucioiu,”8”).
+      preferinte(finante,"4",cig,plaias,”9”).
+      preferinte(marketing,"2",ts,vasile,"10").
+      preferinte(grafica,"2",ie,rusu,”9”).
+      preferinte(programare,"4",ie,nitschi,"10").
+	write_base:-
+            write("-------------------"),nl,
+		write("Nume",”si”,"Prenume"),nl,
+            write("-------------------------------------------"),nl,
+                write(“Materia_preferată”,’\t’,”Anul”,’\t’,”Sectia”,’\t’,”Profesor”,’\t’,”Nota obtinuta”),n1,
+            write("-------------------------------------------"),nl,
+		write_tabel.
+	write_tabel:-
+		person(Nume,Prenume),                          
+            preferinte(Materia_preferat,Anul,Sectia,Profesor,Nota_obtinuta),
+    write(Nume,'\t',Prenume,'\n',Materia_preferata,’\t’,Anul,'\t',Sectia,’\t’,Profesor,’\t’,Nota _obtinuta,’\n’).
