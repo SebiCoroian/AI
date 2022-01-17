@@ -1,0 +1,9 @@
+domains
+	nume_lista=nume*
+	nume=symbol
+	numar=integer
+predicates
+	lungime(numar,nume_lista).
+clauses
+	lungime(0,[]).
+	lungime(N,[_|L]):-lungime(N2,L),N=N2+1.

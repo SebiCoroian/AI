@@ -1,0 +1,12 @@
+domains
+	nume_lista=nume*
+	nume=integer
+predicates
+	append(nume_lista,nume_lista,nume_lista)
+	permut(nume_lista,nume_lista)
+clauses
+	append([],L,L).
+	append([H|T],L,[H|R]):-append(T,L,R).
+	permut([],[]).
+	permut(L,[H|T]):-append(V,[H|U],L),append(V,U,W),
+			 permut(W,T).
